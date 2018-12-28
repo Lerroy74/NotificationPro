@@ -1,0 +1,15 @@
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.csproj.CoreCompileInputs.cache
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.AssemblyInfoInputs.cache
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.AssemblyInfo.cs
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\bin\Debug\netcoreapp2.1\NotificationPro.deps.json
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\bin\Debug\netcoreapp2.1\NotificationPro.runtimeconfig.json
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\bin\Debug\netcoreapp2.1\NotificationPro.runtimeconfig.dev.json
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\bin\Debug\netcoreapp2.1\NotificationPro.dll
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.csprojAssemblyReference.cache
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.RazorAssemblyInfo.cache
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.RazorAssemblyInfo.cs
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.RazorTargetAssemblyInfo.cache
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\bin\Debug\netcoreapp2.1\NotificationPro.pdb
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\UserSecretsAssemblyInfo.cs
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.dll
+C:\Users\Евгений\Documents\git\NotificationPro\NotificationPro\obj\Debug\netcoreapp2.1\NotificationPro.pdb
