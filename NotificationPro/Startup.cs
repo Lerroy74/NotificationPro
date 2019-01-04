@@ -19,6 +19,14 @@ namespace NotificationPro
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
         {
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAllOrigins",
+                    builder =>
+                    {
+                        builder.AllowAnyOrigin();
+                    });
+            });
             services.AddDbContext<CommonContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DatabaseConnectionString")));
             services.AddMvc();
@@ -27,6 +35,7 @@ namespace NotificationPro
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();
@@ -37,7 +46,10 @@ namespace NotificationPro
                 var context = serviceScope.ServiceProvider.GetRequiredService<CommonContext>();
                 context.Database.Migrate();
             }
-            
+
+            app.UseHttpsRedirection();
+            app.UseStaticFiles();
+
         }
     }
 }

@@ -7,10 +7,21 @@ namespace NotificationPro.Entities
 {
     public class User
     {
-        public string Name { get; set; }
+        public int Id { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
         public ICollection<Link> Links { get; set; }
+
+        public User()
+        {
+
+        }
+
+        public User(string email, string password)
+        {
+            Password = password;
+            Email = email;
+        }
 
     }
 
