@@ -21,6 +21,7 @@ namespace NotificationPro.Entities
         {
             Password = password;
             Email = email;
+
         }
 
     }

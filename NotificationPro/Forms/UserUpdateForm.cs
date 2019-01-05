@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace NotificationPro.Forms
 {
-    public class UserRegistrationForm
+    public class UserUpdateForm
     {
         public string Password { get; set; }
         public string Email { get; set; }
+        public  int Id { get; set; }
     }
 }

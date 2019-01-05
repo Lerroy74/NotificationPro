@@ -22,5 +22,19 @@ namespace NotificationPro.Controllers
         {
             return Ok(_userService.Registration(_userRegistrationForm));
         }
+
+        [HttpPost]
+        [Route("find")]
+        public IActionResult FindUser(UserRegistrationForm _userRegistrationForm)
+        {
+            return Ok(_userService.FindUser(_userRegistrationForm));
+        }
+
+        [HttpPost]
+        [Route("update")]
+        public IActionResult UpdateUser(UserUpdateForm _гUpdateForm)
+        {
+            return Ok(_userService.UpdateUser(_гUpdateForm));
+        }
     }
 }

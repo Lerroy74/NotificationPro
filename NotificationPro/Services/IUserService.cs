@@ -9,6 +9,8 @@ namespace NotificationPro.Services
     public interface IUserService
     {
         Result Registration(UserRegistrationForm userForm);
+        Result FindUser(UserRegistrationForm userForm);
+        Result UpdateUser(UserUpdateForm userForm);
 
     }
 }
