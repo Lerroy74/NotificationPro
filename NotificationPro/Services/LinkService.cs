@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using NotificationPro.Entities;
 using NotificationPro.Forms;
+using NotificationPro.ViewModels;
 
 namespace NotificationPro.Services
 {
@@ -15,12 +16,13 @@ namespace NotificationPro.Services
         {
             var result = new Result();
             var link = new Link(linkForm.Url, linkForm.Type);
-            if (link.Url == null)
+            if (string.IsNullOrEmpty(link.Url))
             {
                 result.Errors.Add("Ссылка не может быть пустой");
+                return result;
             }
-
-            result.Data = link;
+            LinkViewModel linkViewModel = new LinkViewModel(link);
+            result.Data = linkViewModel;
             _commonContext.Links.Add(link);
             _commonContext.SaveChanges();
             return result;

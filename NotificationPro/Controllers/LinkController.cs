@@ -15,10 +15,10 @@ namespace NotificationPro.Controllers
     {
         private readonly LinkService _linkService = new LinkService();
         [HttpPost]
-        [Route("addlink")]
-        public IActionResult AddLink(LinkForm _linkForm)
+        [Route("add")]
+        public IActionResult AddLink(LinkForm linkForm)
         {
-            return Ok(_linkService.AddLink(_linkForm));
+            return Ok(_linkService.AddLink(linkForm));
         }
     }
 }
