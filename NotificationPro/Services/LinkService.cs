@@ -26,7 +26,19 @@ namespace NotificationPro.Services
             _commonContext.Links.Add(link);
             _commonContext.SaveChanges();
             return result;
+        }
+
+        public Result AddLinkUser(LinkForm linkForm, UserUpdateForm userLink)
+        {
+            var result = new Result();
+            var link = new Link(linkForm.Url, linkForm.Type);
+            var userLinkAdd = new UserService();
+            userLinkAdd.UpdateUser(userLink);
             
+
+
+
+            return result;
         }
     }
 }

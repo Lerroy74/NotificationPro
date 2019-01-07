@@ -9,5 +9,6 @@ namespace NotificationPro.Services
     interface ILinkService
     {
         Result AddLink(LinkForm linkForm);
+        Result AddLinkUser(LinkForm linkForm, UserUpdateForm userLink);
     }
 }
