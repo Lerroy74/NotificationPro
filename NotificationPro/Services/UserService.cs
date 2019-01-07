@@ -21,12 +21,12 @@ namespace NotificationPro.Services
             var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Email == userForm.Email);
             if (userFromDb != null)
             {
-                result.Errors.Add("Есть такой");
+                result.Errors.Add("Пользователь с таким Email уже зарегистрирован в системе.");
                 return result;
             }
             _commonContext.Users.Add(user);
             _commonContext.SaveChanges();
-            result.Data = "збс";
+            result.Data = "Пользователь добавлен.";
             return result;
         }
 

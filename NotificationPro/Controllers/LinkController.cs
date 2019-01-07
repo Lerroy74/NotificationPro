@@ -20,5 +20,12 @@ namespace NotificationPro.Controllers
         {
             return Ok(_linkService.AddLink(linkForm));
         }
+
+        [HttpPost]
+        [Route("addToUser")]
+        public IActionResult AddLinkUser(LinkFormUser linkForm)
+        {
+            return Ok(_linkService.AddLinkUser(linkForm));
+        }
     }
 }

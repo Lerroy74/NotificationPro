@@ -28,17 +28,28 @@ namespace NotificationPro.Services
             return result;
         }
 
-        public Result AddLinkUser(LinkForm linkForm, UserUpdateForm userLink)
+        public Result AddLinkUser(LinkFormUser linkFormUser)
         {
             var result = new Result();
-            var link = new Link(linkForm.Url, linkForm.Type);
-            var userLinkAdd = new UserService();
-            userLinkAdd.UpdateUser(userLink);
-            
+            var link = new LinkFormUser();
+            var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Id == linkFormUser.Id);
+            if (userFromDb == null)
+            {
+                result.Errors.Add("Пользователь не найден.");
+                return result;
+            }
 
-
-
+            _commonContext.Users.Update(userFromDb);
+            _commonContext.SaveChanges();
+            result.Data = userFromDb;
             return result;
+
+
+            //link = linkFormUser;
+            //_commonContext.Links.Add()
+
+
+            //return result;
         }
     }
 }
