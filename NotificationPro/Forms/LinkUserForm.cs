@@ -6,7 +6,7 @@ using Microsoft.AspNetCore.SignalR;
 
 namespace NotificationPro.Forms
 {
-    public class LinkFormUser : LinkForm
+    public class LinkUserForm : LinkForm
     {
         public int UserId { get; set; }
     }

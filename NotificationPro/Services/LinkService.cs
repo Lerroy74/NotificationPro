@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.EntityFrameworkCore;
 using NotificationPro.Entities;
 using NotificationPro.Forms;
 using NotificationPro.ViewModels;
@@ -28,11 +29,11 @@ namespace NotificationPro.Services
             return result;
         }
 
-        public Result AddLinkUser(LinkFormUser linkFormUser)
+        public Result AddLinkUser(LinkUserForm linkUserForm)
         {
             var result = new Result();
-            var link = new Link(linkFormUser.Url, linkFormUser.Type);
-            var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Id == linkFormUser.UserId);
+            var link = new Link(linkUserForm.Url, linkUserForm.Type);
+            var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Id == linkUserForm.UserId);
             if (userFromDb == null)
             {
                 result.Errors.Add("Пользователь не найден.");
@@ -43,9 +44,23 @@ namespace NotificationPro.Services
             _commonContext.SaveChanges();
             result.Data = userFromDb;
             return result;
+        }
+
+        public Result GetLinkUser(LinkUserForm linkUserForm)
+        {
+            var result = new Result();
+            var link = new List<string>();
+            var userFromDb = _commonContext.Users.Where(x => x.Id == linkUserForm.UserId).Include(x => x.Links).ToList();
+            foreach (object test in userFromDb)
+            {
+                link.Add(test);
+            }
+
+            LinkViewModel linkViewModel = new LinkViewModel(link);
+            result.Data = linkViewModel;
 
 
-            
+            return result;
         }
     }
 }
