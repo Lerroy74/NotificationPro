@@ -10,7 +10,7 @@ namespace NotificationPro.Entities
         public int Id { get; set; }
         public string Password { get; set; }
         public string Email { get; set; }
-        public ICollection<Link> Links { get; set; }
+        public ICollection<Link> Links { get; set; } = new List<Link>();
 
         public User()
         {

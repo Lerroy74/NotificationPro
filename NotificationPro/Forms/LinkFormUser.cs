@@ -8,6 +8,6 @@ namespace NotificationPro.Forms
 {
     public class LinkFormUser : LinkForm
     {
-        public int userId { get; set; }
+        public int UserId { get; set; }
     }
 }

@@ -31,25 +31,21 @@ namespace NotificationPro.Services
         public Result AddLinkUser(LinkFormUser linkFormUser)
         {
             var result = new Result();
-            var link = new LinkFormUser();
-            var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Id == linkFormUser.Id);
+            var link = new Link(linkFormUser.Url, linkFormUser.Type);
+            var userFromDb = _commonContext.Users.FirstOrDefault(x => x.Id == linkFormUser.UserId);
             if (userFromDb == null)
             {
                 result.Errors.Add("Пользователь не найден.");
                 return result;
             }
-
+            userFromDb.Links.Add(link);
             _commonContext.Users.Update(userFromDb);
             _commonContext.SaveChanges();
             result.Data = userFromDb;
             return result;
 
 
-            //link = linkFormUser;
-            //_commonContext.Links.Add()
-
-
-            //return result;
+            
         }
     }
 }

@@ -10,8 +10,7 @@ namespace NotificationPro.Entities
         public int Id { get; set; }
         public string Url { get; set; }
         public string Type { get; set; }
-        public bool Ispublic { get; set; }
-
+        
         public Link(string url, string type)
         {
             Url = url;
