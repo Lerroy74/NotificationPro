@@ -49,15 +49,16 @@ namespace NotificationPro.Services
         public Result GetLinkUser(LinkUserForm linkUserForm)
         {
             var result = new Result();
-            var link = new List<string>();
-            var userFromDb = _commonContext.Users.Where(x => x.Id == linkUserForm.UserId).Include(x => x.Links).ToList();
-            foreach (object test in userFromDb)
+            
+            var userFromDb = _commonContext.Users.Where(x => x.Id == linkUserForm.UserId).Include(x => x.Links).FirstOrDefault();
+            var links = new List<LinkViewModel>();
+            foreach (var link in userFromDb.Links)
             {
-                link.Add(test);
+                links.Add(new LinkViewModel(link));
             }
 
-            LinkViewModel linkViewModel = new LinkViewModel(link);
-            result.Data = linkViewModel;
+            
+            result.Data = links;
 
 
             return result;
