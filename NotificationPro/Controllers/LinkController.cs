@@ -34,5 +34,12 @@ namespace NotificationPro.Controllers
         {
             return Ok(_linkService.GetLinkUser(linkUserForm));
         }
+
+        [HttpPost]
+        [Route("getlink")]
+        public IActionResult GetLink(LinkFilterForm linkFilterForm)
+        {
+            return Ok(_linkService.GetLink(linkFilterForm));
+        }
     }
 }

@@ -6,10 +6,11 @@ using NotificationPro.Enum;
 
 namespace NotificationPro.Forms
 {
-    public class LinkForm
+    public class LinkFilterForm
     {
         public int Id { get; set; }
-        public string Url { get; set; }
+        public DateTimeOffset startDate { get; set; }
+        public DateTimeOffset endDate { get; set; }
         public EnumTypes Type { get; set; }
     }
 }

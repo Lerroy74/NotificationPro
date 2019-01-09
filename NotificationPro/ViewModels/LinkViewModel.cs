@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using NotificationPro.Entities;
+using NotificationPro.Enum;
 
 namespace NotificationPro.ViewModels
 {
@@ -12,8 +13,9 @@ namespace NotificationPro.ViewModels
         {
             Url = link.Url;
             Type = link.Type;
+            
         }
         public string Url { get; set; }
-        public string Type { get; set; }
+        public EnumTypes Type { get; set; }
     }
 }

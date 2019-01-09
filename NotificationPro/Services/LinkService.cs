@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.EntityFrameworkCore;
 using NotificationPro.Entities;
+using NotificationPro.Enum;
 using NotificationPro.Forms;
 using NotificationPro.ViewModels;
 
@@ -56,11 +57,26 @@ namespace NotificationPro.Services
             {
                 links.Add(new LinkViewModel(link));
             }
-
-            
             result.Data = links;
+            return result;
+        }
 
+        public Result GetLink(LinkFilterForm linkFilterForm)
+        {
+            var result = new Result();
+            var linkFromDbType = _commonContext.Links.Where(x => x.Type == linkFilterForm.Type);
+            var linkFromDbId = _commonContext.Links.Where(x => x.Id == linkFilterForm.Id);
+            var links = new List<LinkViewModel>();
+            foreach (var link in linkFromDbType)
+            {
+                links.Add(new LinkViewModel(link));
+            }
+            foreach (var link in linkFromDbId)
+            {
+                links.Add(new LinkViewModel(link));
+            }
 
+            result.Data = links;
             return result;
         }
     }
