@@ -10,5 +10,6 @@ namespace NotificationPro.Services
     {
         Result AddLink(LinkForm linkForm);
         Result AddLinkUser(LinkUserForm linkUserForm);
+        Result GenerateTestData(int count);
     }
 }

@@ -5,9 +5,10 @@ using System.Threading.Tasks;
 
 namespace NotificationPro.Enum
 {
-    public enum EnumTypes
+    public enum LinkType
     {
-        Обучение = 1,
+        Неизвестно,
+        Обучение,
         Развлечение,
         Личное,
         Чтение

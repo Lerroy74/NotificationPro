@@ -16,6 +16,6 @@ namespace NotificationPro.ViewModels
             
         }
         public string Url { get; set; }
-        public EnumTypes Type { get; set; }
+        public LinkType Type { get; set; }
     }
 }

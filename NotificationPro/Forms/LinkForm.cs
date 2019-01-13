@@ -10,6 +10,7 @@ namespace NotificationPro.Forms
     {
         public int Id { get; set; }
         public string Url { get; set; }
-        public EnumTypes Type { get; set; }
+        public LinkType Type { get; set; }
+        public DateTimeOffset CreateDate { get; set; } 
     }
 }

@@ -8,15 +8,20 @@ namespace NotificationPro.Entities
 {
     public class Link
     {
-        public DateTimeOffset CreateDate { get; set; } = DateTimeOffset.Now;
+        public DateTimeOffset CreateDate { get; set; } /*= DateTimeOffset.Now;*/
         public int Id { get; set; }
         public string Url { get; set; }
-        public EnumTypes Type { get; set; }
+        public LinkType Type { get; set; }
         
-        public Link(string url, EnumTypes type)
+        public Link(string url, LinkType type, DateTimeOffset createDate)
         {
             Url = url;
             Type = type;
+            CreateDate = createDate;
         }
+        //    public Link(DateTimeOffset сreateDate)
+        //    {
+        //        CreateDate = сreateDate;
+        //    }
     }
 }

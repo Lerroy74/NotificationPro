@@ -36,10 +36,17 @@ namespace NotificationPro.Controllers
         }
 
         [HttpPost]
-        [Route("getlink")]
-        public IActionResult GetLink(LinkFilterForm linkFilterForm)
+        [Route("getlinks")]
+        public IActionResult GetLinksByFilter(LinksFilterForm linkFilterForm)
         {
-            return Ok(_linkService.GetLink(linkFilterForm));
+            return Ok(_linkService.GetLinksByFilter(linkFilterForm));
+        }
+
+        [HttpPost]
+        [Route("generatetestdata")]
+        public IActionResult GenerateTestData(int count)
+        {
+            return Ok(_linkService.GenerateTestData(count));
         }
     }
 }
